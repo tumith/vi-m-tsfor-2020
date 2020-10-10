@@ -56,8 +56,7 @@ function createLights() {
 function createMaterials() {
 	const loader = new THREE.TextureLoader();
 	const body = new THREE.MeshStandardMaterial({
-		map: loader.load('textures/Snow Seamless Texture #5163.jpg'),
-		// flatShading: true
+		map: loader.load('https://images.template.net/wp-content/uploads/2015/11/10131230/Fluffy-Fresh-Snow-Texture-Download.gif?width=600'),
 	});
 
 	// just as with textures, we need to put colors into linear color space
@@ -65,7 +64,6 @@ function createMaterials() {
 
 	const detail = new THREE.MeshStandardMaterial({
 		color: 0x333333, // darkgrey
-		flatShading: true
 	});
 
 	const noseColor = new THREE.MeshStandardMaterial({
