@@ -136,14 +136,16 @@ function createMeshes() {
   const chimney = new THREE.Mesh(geometries.chimney, materials.detail);
   chimney.position.set(-2, 0.5, 0);
 
+  let move = 0
+
+  document.addEventListener('click', function(e){
+    console.log(chimney.position);
+    move = move + 1
+    chimney.position.set(-2, -move, move);
+	});
+
   const smallWheelRear = new THREE.Mesh(geometries.wheel, materials.detail);
   smallWheelRear.position.set(0, -0.5, 0);
-
-  //const smallWheelCenter = smallWheelRear.clone();
-  //smallWheelCenter.position.x = -1;
-
-  //const smallWheelFront = smallWheelRear.clone();
-  //smallWheelFront.position.x = -2;
 
   const bigWheel = smallWheelRear.clone();
   bigWheel.scale.set(2, 2, 1.25);
@@ -157,8 +159,6 @@ function createMeshes() {
     chimney,
 
     smallWheelRear,
-    //smallWheelCenter,
-    //smallWheelFront,
     bigWheel
   );
 }
