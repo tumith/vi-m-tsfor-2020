@@ -1,122 +1,16 @@
-<!-- https://docs.microsoft.com/en-us/azure/cognitive-services/Face/QuickStarts/JavaScript skoða þetta bettur -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Detect Faces Sample</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="words" contenteditable>
-        </div>
-      
-      <script src="app.js"></script>
-      
-      
-        <style>
-          html {
-            font-size: 10px;
-          }
-      
-          body {
-            background: #ffc600;
-            font-family: 'helvetica neue';
-            font-weight: 200;
-            font-size: 20px;
-          }
-      
-          .words {
-            max-width: 500px;
-            margin: 50px auto;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-            padding: 1rem 2rem 1rem 5rem;
-            background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
-            background-size: 100% 3rem;
-            position: relative;
-            line-height: 3rem;
-          }
-          
-          p {
-            margin: 0 0 3rem;
-          }
-      
-          .words:before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            top: 0;
-            left: 30px;
-            bottom: 0;
-            border: 1px solid;
-            border-color: transparent #efe4e4;
-          }
-        </style>
-        <!-- <script type="text/javascript">
-            function processImage() {
-                var subscriptionKey = "TODO_INSERT_YOUR_FACE_SUBSCRIPTION_KEY_HERE";
-                var uriBase =
-                    "TODO_INSERT_YOUR_FACE_ENDPOINT_HERE/face/v1.0/detect";
-            
-                // Request parameters.
-                var params = {
-                    "detectionModel": "detection_02",
-                    "returnFaceId": "true"
-                };
-            
-                // Display the image.
-                var sourceImageUrl = document.getElementById("inputImage").value;
-                document.querySelector("#sourceImage").src = sourceImageUrl;
-            
-                // Perform the REST API call.
-                $.ajax({
-                    url: uriBase + "?" + $.param(params),
-            
-                    // Request headers.
-                    beforeSend: function(xhrObj){
-                        xhrObj.setRequestHeader("Content-Type","application/json");
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                    },
-            
-                    type: "POST",
-            
-                    // Request body.
-                    data: '{"url": ' + '"' + sourceImageUrl + '"}',
-                })
-            
-                .done(function(data) {
-                    // Show formatted JSON on webpage.
-                    $("#responseTextArea").val(JSON.stringify(data, null, 2));
-                })
-            
-                .fail(function(jqXHR, textStatus, errorThrown) {
-                    // Display error message.
-                    var errorString = (errorThrown === "") ?
-                        "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-                    errorString += (jqXHR.responseText === "") ?
-                        "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
-                            jQuery.parseJSON(jqXHR.responseText).message :
-                                jQuery.parseJSON(jqXHR.responseText).error.message;
-                    alert(errorString);
-                });
-            };
-        </script>
-        <h1>Detect Faces:</h1>
-        Enter the URL to an image that includes a face or faces, then click
-        the <strong>Analyze face</strong> button.<br><br>
-        Image to analyze: <input type="text" name="inputImage" id="inputImage"
-            value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-        <button onclick="processImage()">Analyze face</button><br><br>
-        <div id="wrapper" style="width:1020px; display:table;">
-            <div id="jsonOutput" style="width:600px; display:table-cell;">
-                Response:<br><br>
-                <textarea id="responseTextArea" class="UIInput"
-                    style="width:580px; height:400px;"></textarea>
-            </div>
-            <div id="imageDiv" style="width:420px; display:table-cell;">
-                Source image:<br><br>
-                <img id="sourceImage" width="400" />
-            </div>
-        </div> -->
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <video id="video" height="560" width="width" autoplay muted></video>
+
+    <script src="js/face-api.min.js"></script>
+    <script src="js/app.js
+    "></script>
+</body>
 </html>
