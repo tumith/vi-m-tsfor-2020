@@ -2,11 +2,11 @@ const video = document.getElementById('video');
 let predictedAges = [];
 
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUrl('/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUrl('/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUrl('/models'),
-    faceapi.nets.FaceExpressionNet.loadFromUrl('/models'),
-    faceapi.nets.ageGenderNet.loadFromUrl('/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.FaceExpressionNet.loadFromUri('/models'),
+    faceapi.nets.ageGenderNet.loadFromUri('/models')
 ]).then(startVideo);
 
 
@@ -36,5 +36,23 @@ video.addEventListener('playing', () => {
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
 
         const age = resizedDetections[0].age;
+        const interpolatedAge = interpolatedAgePredictions(age);
+        const bottomRight = {
+            x: resizedDetections[0].detection.box.bottomRight.x - 50,
+            y: resizedDetections[0].detection.box.bottomRight.y
+        }
+
+        new faceapi.draw.DrawTextField(
+            [`${faceapi.utils.round(interpolatedAge, 0)} years`],
+            bottomRight
+        ).draw(canvas);
+
+        console.log(interpolatedAge);
     }, 100);
 });
+
+function interpolatedAgePredictions(age) {
+    predictedAges = [age].concat(predictedAges).slice(0,30);
+    const avgPredictedAge = predictedAges.reduce((total, a) => total + a) / predictedAges.length;
+    return avgPredictedAge;
+}
