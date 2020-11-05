@@ -2,12 +2,12 @@ const imageUpload = document.getElementById('imageUpload');
 // let predictedAges = [];
 
 Promise.all([
-    faceapi.tinyFaceDetector.loadFromUri('/models'),
-    faceapi.faceLandmark68Net.loadFromUri('/models'),
-    faceapi.faceRecognitionNet.loadFromUri('/models'),
-    faceapi.FaceExpressionNet.loadFromUri('/models'),
-    faceapi.ageGenderNet.loadFromUri('/models'),
-    faceapi.ssMobilenetv1.loadFromUri('/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.FaceExpressionNet.loadFromUri('/models'),
+    faceapi.nets.ageGenderNet.loadFromUri('/models'),
+    faceapi.nets.ssMobilenetv1.loadFromUri('/models')
 ]).then(start)     // var .then(startVideo)
 
 
