@@ -1,14 +1,21 @@
 const imageUpload = document.getElementById('imageUpload');
 // let predictedAges = [];
 
-Promise.all([
+/*Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
     faceapi.nets.FaceExpressionNet.loadFromUri('/models'),
     faceapi.nets.ageGenderNet.loadFromUri('/models'),
     faceapi.nets.ssMobilenetv1.loadFromUri('/models')
-]).then(start)     // var .then(startVideo)
+]).then(start)*/     // var .then(startVideo)
+
+await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
+await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
+await faceapi.nets.faceRecognitionNet.loadFromUri('/models');
+await faceapi.nets.FaceExpressionNet.loadFromUri('/models');
+await faceapi.nets.ageGenderNet.loadFromUri('/models');
+await faceapi.nets.ssMobilenetv1.loadFromUri('/models');
 
 
 function start() {
