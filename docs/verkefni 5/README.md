@@ -7,7 +7,8 @@ Og svo þegar notandinn segir áhveðin hlut þá er sýnt mynd t.d. ef það er
 
 ### Libraries
 ___
-materializecss.com
+  1. [materializecss.com](https://materializecss.com/)
+  2. [animejs.com](https://animejs.com/)
 
 ### Það sem ég er að nota
 ___
