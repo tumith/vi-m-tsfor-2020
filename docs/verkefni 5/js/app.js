@@ -59,7 +59,7 @@ recognition.addEventListener('result', e => {
        }
     }
 
-    if (transcript.includes('babababababababababababajhflakjflajflajsgflkajgoiagoiunasiogubaksgblksjdgbnlkjsdnvijsungeiuglksdkjb')){
+    if (transcript.includes('break')){
         let x = 1
         while(x === 1){
         window.location.reload()
