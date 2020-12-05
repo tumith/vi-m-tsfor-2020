@@ -58,18 +58,6 @@ recognition.addEventListener('result', e => {
            console.log(`smile : ${man}`);
        }
     }
-
-    // If you use break be sure that the page is in a separet window
-    if (transcript.includes('break')){
-        let x = 1
-        while(x === 1){
-        window.location.reload()
-        }
-        window.onbeforeunload = confirmExit;
-            function confirmExit() {
-                return "You have attempted to leave this page. Are you sure?";
-            }
-    }
 });
 
 recognition.addEventListener('end', recognition.start);
