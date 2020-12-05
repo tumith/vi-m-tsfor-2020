@@ -59,6 +59,7 @@ recognition.addEventListener('result', e => {
        }
     }
 
+    // If you use break be sure that the page is in a separet window
     if (transcript.includes('break')){
         let x = 1
         while(x === 1){
