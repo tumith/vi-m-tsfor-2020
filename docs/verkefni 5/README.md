@@ -16,3 +16,8 @@ ___
   2. JavaScript
   3. Html og css, materializecss
   4. GitHub og git bash og github pages
+
+#### Video og Myndir
+___
+[Vidó af verkefninu](https://youtu.be/0QlQ_Z075WU)
+[Myndin af app.js](https://media.discordapp.net/attachments/702580340681605170/784920758546857994/unknown.png?width=1278&height=755)
