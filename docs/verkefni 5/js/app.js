@@ -51,11 +51,11 @@ recognition.addEventListener('result', e => {
 
        if (!toggle){
            toggle = true;
-           console.log(`frown : ${baby}`);
+           console.log(`baby : ${baby}`);
        }
        else{
            toggle = false;
-           console.log(`smile : ${man}`);
+           console.log(`man : ${man}`);
        }
     }
 });
